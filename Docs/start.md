@@ -6,7 +6,7 @@ Permet de lancer officiellement le draft d'une game en ajoutant les liens de dra
 
 ### Inputs requis :
 
-- game_id (entier, requis) : L'identifiant de la game. [exemple de game_id]('https://i.imgur.com/nLxh0a3.png')
+- game_id (entier, requis) : L'identifiant de la game. (Exemple : https://i.imgur.com/nLxh0a3.png)
 
 - team1_draft_url (texte, requis) : URL vers la draft de la Team 1.
 
