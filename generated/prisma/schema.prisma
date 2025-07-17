@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id        Int          @id @default(autoincrement())
+  discordId String       @unique
+  riotName  String?
+  games     GamePlayer[]
+}
+
+model Game {
+  id        Int          @id @default(autoincrement())
+  createdAt DateTime     @default(now())
+  winner    Team?
+  players   GamePlayer[]
+}
+
+model GamePlayer {
+  id       Int    @id @default(autoincrement())
+  player   Player @relation(fields: [playerId], references: [id])
+  playerId Int
+  game     Game   @relation(fields: [gameId], references: [id])
+  gameId   Int
+  team     Team
+  role     Role
+}
+
+enum Team {
+  TEAM1
+  TEAM2
+}
+
+enum Role {
+  TOP
+  JUNGLE
+  MID
+  ADC
+  SUPPORT
+}
