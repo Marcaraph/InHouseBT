@@ -48,6 +48,6 @@ module.exports = {
             data: { winner }
         });
 
-        await interaction.reply(`✅ Game has been reported as won by ${winner}.`);
+        await interaction.reply(`✅ Game ${gameId} has been reported as won by ${winner}.`);
     },
 };
