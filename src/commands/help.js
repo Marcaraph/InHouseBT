@@ -13,8 +13,8 @@ module.exports = {
             .addFields(
                 { name: '/create-game', value: '[Create a custom game](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/create-game.md)' },
                 { name: '/start', value: '[Start the draft](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/start.md)' },
-                { name: '/stats', value: '[Show stats](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/stats.md]' },
-                { name: '/report', value: '[Report the result of a game](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/report.md]' }
+                { name: '/stats', value: '[Show stats](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/stats.md)' },
+                { name: '/report', value: '[Report the result of a game](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/report.md)' }
             );
 
         const row = new ActionRowBuilder().addComponents(
