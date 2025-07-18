@@ -26,6 +26,8 @@ module.exports = {
         const totalGames = player.games.length;
         const wins = player.games.filter(gp => gp.game?.winner === gp.team).length;
 
-        await interaction.reply(`${interaction.user.username} has won ${wins} out of ${totalGames} games.`);
+        const displayName = interaction.member?. displayName || interaction.user.username;
+
+        await interaction.reply(`${displayName} has won ${wins} out of ${totalGames} games.`);
     },
 };
