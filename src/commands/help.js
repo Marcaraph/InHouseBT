@@ -7,14 +7,14 @@ module.exports = {
 
     async execute(interaction) {
         const embed = new EmbedBuilder()
-            .setTitle('Liste des commandes disponibles')
+            .setTitle('LoL Bot Help')
             .setColor(0x00AE86)
-            .setDescription('Voici la liste des commandes disponibles :\n\n')
+            .setDescription('Available commands :\n\n')
             .addFields(
                 { name: '/create-game', value: '[Create a custom game](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/create-game.md)' },
                 { name: '/start', value: '[Start the draft](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/start.md)' },
-                { name: '/stats', value: 'Stats - WiP' },
-                { name: '/report', value: 'Report the result of a game - WiP' }
+                { name: '/stats', value: '[Show stats](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/stats.md]' },
+                { name: '/report', value: '[Report the result of a game](https://github.com/Marcaraph/InHouseBT/blob/master/Docs/report.md]' }
             );
 
         const row = new ActionRowBuilder().addComponents(
