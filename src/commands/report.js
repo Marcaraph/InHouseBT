@@ -31,14 +31,14 @@ module.exports = {
 
         if (!game) {
             return await interaction.reply({
-                content: "Cette game n'existe pas.",
+                content: "This game doesn't exist.",
                 ephemeral: true,
             });
         }
 
         if (game.winner) {
             return await interaction.reply({
-                content: "Cette game a deja un gagnant.",
+                content: "This game has already been reported.",
                 ephemeral: true,
             });
         }

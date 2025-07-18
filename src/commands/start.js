@@ -34,14 +34,14 @@ module.exports = {
 
         if (!game) {
             return await interaction.reply({
-                content: "Cette game n'existe pas.",
+                content: "This game doesn't exist.",
                 ephemeral: true,
             });
         }
 
         if (game.createdBy !== interaction.user.id) {
             return await interaction.reply({
-                content: "Vous n'avez pas la permission de commencer le draft.",
+                content: "You are not the creator of this game.",
                 ephemeral: true,
             });
         }

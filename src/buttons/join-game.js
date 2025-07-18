@@ -18,7 +18,7 @@ module.exports = {
 
       if (!game) {
         return await interaction.reply({
-          content: "Cette game n'existe pas.",
+          content: "This game doesn't exist.",
           ephemeral: true,
         });
       }
@@ -38,7 +38,7 @@ module.exports = {
 
       if (alreadyInGame) {
         return await interaction.reply({
-          content: "Tu es déjà inscrit à cette game.",
+          content: "You are already registered in this game.",
           ephemeral: true,
         });
       }
@@ -49,7 +49,7 @@ module.exports = {
 
       if (currentPlayers.length >= 10) {
         return await interaction.reply({
-          content: "La game est déjà complète (10 joueurs).",
+          content: "This game is already full.",
           ephemeral: true,
         });
       }
@@ -60,7 +60,7 @@ module.exports = {
       let team;
       if (team1Count >= 5 && team2Count >= 5) {
         return await interaction.reply({
-          content: "Les deux équipes sont déjà complètes.",
+          content: "There are already 5 players in each team.",
           ephemeral: true,
         });
       }
@@ -107,7 +107,7 @@ module.exports = {
 
       if (!chosenRole) {
         return await interaction.reply({
-          content: "Plus aucun rôle disponible dans cette équipe.",
+          content: "No more roles available.",
           ephemeral: true,
         });
       }
@@ -178,7 +178,7 @@ module.exports = {
       }
 
       await interaction.reply({
-        content: `Tu as rejoint la game dans l'équipe ${team} en tant que ${chosenRole} !`,
+        content: `You have joined ${team} as ${formatRole(chosenRole)}.`,
         ephemeral: true,
         components: [
           new ActionRowBuilder().addComponents(

@@ -17,7 +17,7 @@ module.exports = {
 
       if (!player) {
         return await interaction.reply({
-          content: "Tu n'es pas enregistré comme joueur.",
+          content: "Your account doesn't exist.",
           ephemeral: true,
         });
       }
@@ -31,7 +31,7 @@ module.exports = {
 
       if (!gamePlayer) {
         return await interaction.reply({
-          content: "Tu n'es pas inscrit à cette game.",
+          content: "You're not in this game.",
           ephemeral: true,
         });
       }
@@ -72,17 +72,17 @@ module.exports = {
         .addFields(
           {
             name: 'TEAM 1',
-            value: team1.length ? team1.join('\n') : 'Aucun joueur',
+            value: team1.length ? team1.join('\n') : 'No player',
             inline: true,
           },
           {
             name: 'TEAM 2',
-            value: team2.length ? team2.join('\n') : 'Aucun joueur',
+            value: team2.length ? team2.join('\n') : 'No player',
             inline: true,
           }
         )
         .setFooter({
-          text: `Joueurs inscrits : ${team1.length + team2.length} / 10`,
+          text: `👥 : ${team1.length + team2.length} / 10`,
         });
 
       // Mise à jour du message de la game
@@ -93,7 +93,7 @@ module.exports = {
 
         if (!game) {
           return await interaction.reply({
-            content: "Game introuvable.",
+            content: "The game doesn't exist.",
             ephemeral: true,
           });
         }
@@ -119,11 +119,11 @@ module.exports = {
         });
 
       } catch (error) {
-        console.error('Erreur lors de la mise à jour du message de la game:', error);
+        console.error('Error updating game message', error);
       }
 
       await interaction.reply({
-        content: "Tu as été désinscrit de la game.",
+        content: "You have left the game.",
         ephemeral: true,
       });
     });
