@@ -42,7 +42,7 @@ module.exports = {
 
         await prisma.game.update({
             where: { id: gameId },
-            data: { winner }
+            data: { winner, closed: true }
         });
 
         try {
@@ -66,7 +66,7 @@ module.exports = {
             const newEmbed = oldEmbed.setFields(updatedFields);
 
             const updatedComponents = gameMessage.components.map(row =>
-                new ActionRowBuilder().AddComponents(
+                new ActionRowBuilder().addComponents(
                     row.components.map(button => {
                         if (button.style === ButtonStyle.Link) return button;
                         return ButtonBuilder.from(button).setDisabled(true);

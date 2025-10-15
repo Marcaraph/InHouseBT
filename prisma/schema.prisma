@@ -22,6 +22,7 @@ model Game {
   createdAt DateTime @default(now())
   winner Team?
   players GamePlayer[]
+  closed Boolean @default(false)
   messageId String?
   channelId String?
   createdBy String @default("")

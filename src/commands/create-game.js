@@ -35,7 +35,11 @@ module.exports = {
       new ButtonBuilder()
         .setLabel('Lien Draft')
         .setStyle(ButtonStyle.Link)
-        .setURL('https://fearlessdraft.net')
+        .setURL('https://fearlessdraft.net'),
+      new ButtonBuilder()
+        .setCustomId(`close-game-${game.id}`)
+        .setLabel('Fermer la game')
+        .setStyle(ButtonStyle.Danger)  
     );
 
     const sentMessage = await channel.send({

@@ -150,7 +150,7 @@ module.exports = {
           }
         )
         .setFooter({
-          text: `Joueurs inscrits : ${team1.length + team2.length} / 10`,
+          text: `👥 : ${team1.length + team2.length} / 10`,
         });
 
       try {
@@ -166,7 +166,11 @@ module.exports = {
           new ButtonBuilder()
             .setLabel('Lien Draft')
             .setStyle(ButtonStyle.Link)
-            .setURL('https://fearlessdraft.net')
+            .setURL('https://fearlessdraft.net'),
+          new ButtonBuilder()
+            .setCustomId(`close-game-${game.id}`)
+            .setLabel('Fermer la game')
+            .setStyle(ButtonStyle.Danger)
         );
 
         await gameMessage.edit({
